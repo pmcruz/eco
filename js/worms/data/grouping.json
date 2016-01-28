@@ -1,0 +1,95 @@
+{
+	"companies": [
+		{
+			"name": "BCI",
+			"long_name": "Banco Comercial e de Investimentos",
+			"related": ["BCI", "BCI Fomento"],
+			"comments": "relacionado com a CGD"
+		},
+		{
+			"name": "BCP",
+			"long_name": "Millenium BCP - Banco Comercial Português",
+			"related": ["BCP Angola", "BCP Interfundos", "BCP Investimento", "BCP Luxemburgo"]
+		},
+		{
+			"name": "BES",
+			"long_name": "Banco Espírito Santo",
+			"related": [ "BES Finantial"]
+		},
+		{
+			"name": "BPI",
+			"long_name": "Banco Português de Investimento",
+			"related": ["BPI BFE Patrimónios", "BPI Douro", "BPI Global Seguros", "BPI Sofinac", "BPI Vida"]
+		},
+
+		{
+			"name": "BPN",
+			"long_name": "Banco Português de Negócios",
+			"related": ["BPN Efisa"]
+		},
+		{
+			"name": "BPA",
+			"long_name": "Banco Português do Atlântico",
+			"related": ["BPA Angola"]
+		},
+		{
+			"name": "Banif",
+			"long_name": "Banco Internacional do Funchal",
+			"related":  [ "Banif Investimento"]
+		},
+		{
+			"name" : "CGD",
+			"long_name" : "Caixa Geral de Depósitos",
+			"related": ["CGD Seguros", "CGD Participações", "CGD BCI Fomento", "CGD Imoleasing"]
+		},
+		{
+			"name": "Mello",
+			"long_name": "Grupo Mello",
+			"related": ["Grupo Mello, Hospital Amadora-Sintra", "Grupo Mello: Nutrinveste e Mello", "Lisnave (Mello)", "Mello Saúde", "FISIPE Fibras Sintéticas (Mello)", "Nutrinveste (Mello)", "Hospital Amaradora-Sintra (Mello)", "Hospital Amaradora-Sintra (Mello)"]
+		},
+		{
+			"name": "TagusPark",
+			"long_name": "Parque de Ciência e Tecnologia"
+		},
+		{
+			"name": "FLAD",
+			"long_name": "Fundação Luso-Americana para o Desenvolvimento"
+		},
+		{
+			"name": "SLN",
+			"long_name": "Sociedade Lusa de Negócios"
+		},
+		{
+			"name": "ZON",
+			"long_name": "ZON Multimédia"
+		},
+		{
+			"name": "SaeR",
+			"long_name": "Sociedade de Avaliação de Empresas e Risco"
+		},
+		{
+			"name": "RAVE",
+			"long_name": "Rede alta velocidade"
+		},
+		{
+			"name": "SIMA",
+			"long_name": "Sociedade Instaladora de Mercados Abastecedores"
+		},
+		{
+			"name": "ACL",
+			"long_name": "Associação Comercial de Lisboa"
+		},
+		{
+			"name": "BFN",
+			"long_name": "Banco Fomento Nacional"
+		},
+		{
+			"name": "AIP",
+			"long_name": "Associação Industrial Portuguesa, Confederação Empresarial"
+		},
+		{
+			"name": "APEL",
+			"long_name": "Associação Portuguesa de Editores Livreiros"
+		}
+	]
+}

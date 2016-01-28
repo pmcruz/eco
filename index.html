@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Um ecossistema político-empresarial</title>
+    <meta name="description" content="Visualização interactiva das relações de membros de Governos de Portugal com empresas e grupos de 1975 a 2013">
+    <meta property="og:title" content="Um ecossistema político-empresarial"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://pmcruz.com/eco/img/preview.png"/>
+    <meta property="og:url" content="http://pmcruz.com/eco/"/>
+    <meta property="og:description" content="Visualização interactiva das relações de membros de Governos de Portugal com empresas e grupos de 1975 a 2013"/>
+    <meta property="fb:app_id" content="553365664757177"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@pmcruz">
+    <meta name="twitter:title" content="An ecosystem of corporate politicians in Portugal">
+    <meta name="twitter:description" content="Interactive visualization of the relations between politicians and companies in Portugal from 1975 to 2013">
+    <meta name="twitter:creator" content="@pmcruz">
+    <meta name="twitter:image:src" content="http://pmcruz.com/eco/img/preview.png">
+    <meta name="twitter:domain" content="pmcruz.com">
+
+    <link rel="author" href="https://plus.google.com/+PedroMiguelCruz"/>
+    <link rel="icon" type="image/png" href="img/favi3.png" />
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="js/libs/nanoscroller.css">
+    <link rel="stylesheet" href="css/boilerplate.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body lang="pt">
+<div id="fb-root"></div>
+
+    
+
+    <div id="container">
+        <div id="debug"></div>
+        <div id="intro">
+            <div id="title-logo">
+                <p class="eco">Um ecossistema<span lang="en">An ecosystem of</span></p>
+                <p class="pol">político-empresarial<span lang="en">corporate politicians</span></p>
+                <p class="por">Portugal 1975-2013</p>
+                <p class="desc">Visualização interactiva das relações de membros de Governos de Portugal com empresas e grupos. <!--<b style="color: #8a0000;"><i>Pedro Cruz está nomeado para o prémio Nação Inovadora (SIC Notícias/Audi). Se gostou desta visualização vote <a href="http://www.nacaoinovadora.pt/nomeados/perfil/1028/pedro-miguel-cruz" target="_blank">aqui</a>.</i></b>--><span lang="en">Interactive visualization of the relations between members of Portuguese governments and companies</span></p>
+                <p class="english">English</p>
+                <div id="en-warning">Thank you for your interest in this subject. Although the main interface is translated in English, the dataset itself is not: it was just not bearable to translate 9000 lines of data at this point. The companies' names are in Portuguese and often are acronyms.<br/>The politicians' positions either in governments or companies are not translated, although for the later they are often part of the board of administrators (as executives or non-executives).</div>
+            </div>
+
+            <div id="demo">
+                <p class="dempresa"><span class="bold">Uma empresa</span><br/><span class="min">com tamanho proporcional<br/>ao número de políticos</span><span lang="en"><span class="bold">A company</span><br/><span class="min">with size proportional<br/>to the number of politicians</span></span></p>
+                <p class="dpolitico"><span class="bold">Um político</span><br/><span class="min">a participar nessa empresa</span><span lang="en"><span class="bold">One politician</span><br/><span class="min">with a management position at that company</span></span></p>
+            </div>
+            <div id="texplorar">
+                <div id="ready">Explorar<span lang="en">Explore</span></div>
+                <div id="status">Fazendo magia&hellip;<span lang="en">Making wonders&hellip;</span></div>
+                <div id="erro">O seu navegador não suporta esta aplicação.<br/> Atualize o seu navegador ou instale o <a target="_blank" href="http://www.mozilla.org/pt-PT/firefox/">Mozilla Firefox</a> ou o <a target="_blank" href="https://www.google.com/chrome">Google Chrome</a>.<span lang="en">Your browser does not support this application.<br/> Please update your browser or install <a target="_blank" href="http://www.mozilla.org/pt-PT/firefox/">Mozilla Firefox</a> or <a target="_blank" href="https://www.google.com/chrome">Google Chrome</a>.</span></div>
+            </div>
+            <div id="bexplorar"></div>
+        </div>
+        <div id="container2">
+            <div id="nota">Explore o ecossistema clicando em empresas<br/>e apanhando políticos<span lang="en">Explore the ecosystem clicking in companies<br/>and catching the politicians</span></div>
+
+            <div id="ecocanvas">
+
+            </div>
+            
+             <div id="containerleft">
+                <span id="tempresa"></span>
+                <p id="dempresasrelacionadas"><span id="leg-governos">Participações em governos<span lang="en">Positions in Governments</span></span><span id="leg-outrasempresas">&amp; outras empresas que partilham<br/>os mesmos políticos<span lang="en">&amp; other companies that share<br/>the same politicians</span></span></p>
+                <div id="dempresa" class="nano">
+                    <div class="content">
+                    </div>
+                </div>
+            </div>
+
+            <div id="containerright">
+                <span id="tpoliticos"><span id="leg-politicos">Políticos<span lang="en">Politicians</span></span><span id="leg-parempresas">Participações em empresas<span lang="en">Positions in companies</span></span></span>
+                <div id="dpoliticos" class="nano">
+                    <div class="content">
+                    </div>
+                </div>
+                <div id="tooltip"></div>
+            </div>
+
+           
+        </div>
+
+        <div id="barra">
+            <div id="resultados">
+            </div>
+            <div class="b" id="b_left"></div>
+            <div class="b" id="b_right"></div>
+            <div class="b" id="b_origin"></div>
+            <div class="b" id="b_share"></div>
+            <div class="b" id="b_info"></div>
+            <input id="procura" type="text" name="input" value="">
+        </div>
+
+
+        <div id="partilha">
+            <!-- AddThis Button BEGIN -->
+            <div class="addthis_toolbox addthis_default_style ">
+                <a class="addthis_button_preferred_1"></a>
+                <a class="addthis_button_preferred_2"></a>
+                <a class="addthis_button_preferred_3"></a>
+                <a class="addthis_button_preferred_4"></a>
+                <a class="addthis_button_compact"></a>
+                <a class="addthis_counter addthis_bubble_style"></a>
+            </div>
+            <!-- AddThis Button END -->
+            <br/>
+            <div class="fb-comments" data-href="http://pmcruz.com/eco" data-numposts="5" data-width="300" data-colorscheme="light"></div>
+        </div>
+
+
+        <div id="sobre">
+            <div class="fecha"></div>
+            <p class="eco">Um ecossistema<span lang="en">An ecosystem of</span></p>
+            <p class="pol">político-empresarial<span lang="en">corporate politicians</span></p>
+            <p class="por">Portugal 1975-2013</p>
+            <p class="por" style="line-height: 1.3em; color: #8a0000"><b><i>Pedro Cruz está nomeado para o prémio Nação Inovadora (SIC Notícias/Audi). Se gostou desta visualização vote <a href="http://www.nacaoinovadora.pt/nomeados/perfil/1028/pedro-miguel-cruz" target="_blank">aqui</a>.</i></b></p>
+            <div class="section">
+                <p>Esta é uma visualização interativa das relações de membros de Governos de Portugal com empresas e grupos para o período de 1975 a 2013. O tempo da visualização não representa uma escala cronológica&mdash;em vez disso preferiu-se representar todos os políticos e empresas ao mesmo tempo para destacar o trânsito frenético de políticos por entre empresas.</p>
+                <p>O universo dos dados é abordado como um ecossistema&mdash;um conjunto de relações de interdependências que são reguladas por condições físicas, em que cada político tem uma sequência de empresas para visitar, perseguindo-as e saltando entre elas para recomeçar a sequência de cada vez que a completa.</p>
+                <div lang="en">
+                    <p>An interactive visualization of the relationships between members of Portuguese governments and companies for the period of 1975 to 2013. Data is approached as an ecosystem, where each set of interdependent relations are regulated by physical conditions&mdash;each politician has a sequence of companies to visit, chasing them and jumping between them, in order to restart the sequence each time it is completed.</p>
+                    <p>The visualization time is not set on a strict chronological order, but instead it displays every politician and company at the same time in order to emphasize the frenetic traffic of politicians in-between companies.</p> 
+                </div>
+            </div>
+            <h2>Forma<span lang="en">Form</span></h2>
+            <div class="section">
+                <p>As empresas são círculos com área proporcional ao número de políticos que tiveram um cargo nela durante o período 1975-2013. Desta forma os círculos maiores representam empresas por onde passaram mais políticos.</p>
+                <p>Os políticos são simulados como organismos vivos, tendo uma série de empresas a visitar e circundando cada uma por uma quantidade de tempo proporcional à duração de um cargo específico naquela empresa. A cor de cada político reflete a última afiliação partidária que se conseguiu determinar. Nos casos em que isso não foi possível, são cinzentos.</p>
+                <p>A <i>anatomia de um político</i> está relacionada com o número de companhias únicas que tem de visitar como mostra a imagem seguinte.</p>
+                <img id="anatomia" alt="Anatomia dos políticos" src="img/anatomia.png"/>
+                <div lang="en">
+                    <p>The circles represent companies with an area proporcional to the number of politicians that passed through that company during 1975-2013. That way, bigger circles represent companies with more politicians.</p> 
+                    <p>Politicians are simulated as living organisms, having a set of companies to visit, encircling them for an amount of time proportional to the duration of their specific positions at the company. The color of each politician is based on its latest party affiliation, such as <a target="_blank" href="http://en.wikipedia.org/wiki/Socialist_Party_(Portugal)" class="PS">socialists</a>, <a target="_blank" href="http://en.wikipedia.org/wiki/Social_Democratic_Party_(Portugal)" class="PSD">social-democrats</a> and <a target="_blank" href="http://en.wikipedia.org/wiki/Democratic_and_Social_Center_/_People%27s_Party" class="CDS">conservatives</a>. In cases where the political affiliation could not be defined, politicians are left gray.</p>
+                    <p>The <i>anatomy of a politician</i> is related the number of unique companies that he has to visit, as shown by the following image.</p>
+                <img id="anatomia" alt="Anatomia dos políticos" src="img/anatomia.png"/>
+                </div>
+            </div>
+            <h2>Exploração<span lang="en">Exploration</span></h2>
+            <div class="section">
+                <p>Para além de visualizar todas as relações deste ecossistema simultaneamente, é também possível explorar universos de tráfego de primeira ordem.</p>
+                <p>Clicando numa empresa, isola-se o ecossistema dessa empresa, mostrando apenas os políticos que tiveram um cargo nessa empresa e todas as empresas que também tiveram esses políticos orbitando em torno da empresa selecionada.</p>
+                <p>Clicando num político visualiza-se o seu percurso por entre empresas, assim como se acedem aos cargos políticos e respetivas afiliações partidárias.</p>
+                <div lang="en">
+                    <p>In addition to visualize every relation in this ecosystem simultaneously, it is also possible to explore more specific views.</p>
+                    <p>By clicking on a company, one can isolate its ecosystem, displaying only the politicians that had a position at that company and also displaying other companies that had the same politicians orbiting around the selected company.</p>
+                    <p>By clicking on a politician one can visualize his path between companies, as well as get access to his positions in governments and respective political affiliations.</p>
+                </div>
+            </div>
+            <h2>Dados<span lang="en">Data</span></h2>
+            <div class="section">
+                <p>Os dados são quase na totalidade retirados do estudo &laquo;<a target="_blank" href="http://www.donosdeportugal.net/p/politica-e-negocios.html">Política e Negócios</a>&raquo; feito para o documentário &laquo;<a target="_blank" href="http://www.donosdeportugal.net">Donos de Portugal</a>&raquo; de Jorge Costa. Como se lê no estudo, o grupo de pessoas abordadas representa apenas uma amostra da dimensão real do trânsito entre cargos governativos e órgãos sociais de grandes empresas ou grupos económicos.</p>
+                <p>A pesquisa em &laquo;Política e Negócios&raquo; vai até meados de 2010 e incidiu apenas sobre ministros e secretários de Estado, predominantemente de setores estratégicos (finanças, economia e obras públicas). Esta pesquisa foi complementada com uma investigação sobre a continuidade dos cargos até fins de 2013. Em adição a estes foram adicionados políticos contemplados no &laquo;<a target="_blank" href="http://www.aeca.es/xvencuentroaeca/cd/43h.pdf">Estudo exploratório sobre as ligações políticas das empresas cotadas em Portugal</a>&raquo; (em actas da conferência <a href="http://www.xvaeca.ipca.pt" target="_blank">XV Encontro Aeca</a>, Ofir-Esposende, 2012) e mais uma mão cheia de outros que considerámos relevantes mas que tiveram sempre cargos governamentais de destaque (secretário de estado, ministro, primeiro-ministro).</p>
+                <p>Deve-se destacar que a informação recolhida provém de informação pública sobre a constituição dos órgãos sociais das empresas, de relatórios de contas públicos, de currículos públicos e algumas notícias na imprensa online. Este trabalho resultou na recolha de mais de 130 políticos e mais de 350 empresas que vão sendo adicionados ao sistema assim que confirmamos as pesquisas. Ratificações e sugestões sobre alguma entrada nos dados podem ser feitas para <span class="econmail"></span>.</p>
+                <p>O dados estão disponíveis <a href="http://pmcruz.com/eco/js/worms/data/worms_12jan.json">aqui</a> e o agrupamento de empresas <a href="http://pmcruz.com/eco/js/worms/data/grouping.json">aqui</a> ambos JSON UTF-8 e sob a licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.</p>
+                <div lang="en">
+                    <p>The data was collected from a <a target="_blank" href="http://www.donosdeportugal.net/p/politica-e-negocios.html">study</a> of politics and businesses done for the documentary &ldquo;<a target="_blank" href="http://www.donosdeportugal.net">Donos de Portugal</a>&rdquo; which covers the relations of ministers and secretaries of state of Portuguese governments with companies, roughly from 1975 to 2010. This study was complemented with our own research of their positions in companies until 2013.</p>
+                    <p>In addition, other politicians and companies were added from an &ldquo;<a target="_blank" href="http://www.aeca.es/xvencuentroaeca/cd/43h.pdf">Exploratory study about political connections of stock companies in Portugal</a>&rdquo;, and another hand full that we deemed relevant but always with high governmental positions (ministers, secretaries of state and prime-ministers).</p>
+                    <p>It should also be noticed that the gathered information was always included from public sources, such as companies' governing bodies available online, companies' public reports, news from the online press and public résumés. This resulted in more than 130 gathered politicians and more than 350 companies that are still being added to the system as we conclude our research. Although this data is only a sample of the real dimension of traffic between companies and governments in Portugal, it is indeed highly illustrative of the subject.</p>
+                </div>
+            </div>
+            <h2>Autorias<span lang="en">Authorship</span></h2>
+            <div class="section">
+                <p>O meu nome é <a href="http://pmcruz.com" target="_blank">Pedro Miguel Cruz</a>, gosto de dar forma às coisas e esta é a forma que dei a este assunto. Sou estudante de doutoramento na Universidade de Coimbra no <a href="https://www.cisuc.uc.pt/groups/show/cms" target="_blank">CDV-CISUC</a>. A Cátia Costa, também membro do CDV Lab, passou pelo martírio indispensável, com rigor, perseverança e tenacidade, de investigar, escrever e ratificar quase 9000 linhas de dados. Sem o meu orientador, <a href="http://fmachado.dei.uc.pt" target="_blank">Penousal Machado</a>, este trabalho não teria a sua forma atual, nem tinha sido possível pelo menos não na posse da sanidade mental a que agora me disponho. Um obrigado ao Alexandre Matos e ao João Bicker pelos vetores valiosíssimos.</p>
+                <div lang="en">
+                    <p>My name is <a href="http://pmcruz.com" target="_blank">Pedro Miguel Cruz</a>, I like to shape things, and this is the form that I gave to this subject. A big thank you to Cátia Costa, member of the <a href="https://www.cisuc.uc.pt/groups/show/cms" target="_blank">Computational Design and Visualization Lab at University of Coimbra</a>, that researched, ratified and typed almost 9000 lines of data, with rigor and perseverance. A big shout-out to my supervisor <a href="http://fmachado.dei.uc.pt" target="_blank">Penousal Machado</a> without whom this work wouldn't be possible as it is. A word of appreciation for the wisdom to Alexandre Matos and João Bicker.</p>
+                </div>
+            </div>
+            <h2>Bibliotecas<span lang="en">Libraries</span></h2>
+            <div class="section">
+                <p>Os principais alicerces desta aplicação são as muito boas bibliotecas minimais <a href="http://soulwire.github.io/sketch.js/" target="_blank">sketch.js</a> e <a href="https://github.com/soulwire/Coffee-Physics/" target="_blank">Coffee Physics</a> do <a href="http://soulwire.co.uk/" target="_blank">Justin Windle</a>. Outras se seguem: <a href="https://github.com/phiggins42/has.js/" target="_blank">has.js</a>, <a href="https://github.com/devbridge/jQuery-Autocomplete" target="_blank">devbridge/jQuery-Autocomplete</a>, <a href="http://jamesflorentino.github.io/nanoScrollerJS/" target="_blank">nanoScroller.js</a>, <a href="https://github.com/harthur/color" target="_blank">harthur/color.js</a>, <a href="https://github.com/sole/tween.js/" target="_blank">sole/tween.js</a>, <a href="https://code.google.com/p/hyphenator/" target="_blank">Hyphenator.js</a>.</p>
+                <div lang="en">
+                    <p>My main inspiration for the implementation of this work and its core components are the delicious <a href="http://soulwire.github.io/sketch.js/" target="_blank">sketch.js</a> and <a href="https://github.com/soulwire/Coffee-Physics/" target="_blank">Coffee Physics</a> from <a href="http://soulwire.co.uk/" target="_blank">Justin Windle</a>. Others follow that should have my most respectable acknowledgment, since they make life so much easier: <a href="https://github.com/phiggins42/has.js/" target="_blank">has.js</a>, <a href="https://github.com/devbridge/jQuery-Autocomplete" target="_blank">devbridge/jQuery-Autocomplete</a>, <a href="http://jamesflorentino.github.io/nanoScrollerJS/" target="_blank">nanoScroller.js</a>, <a href="https://github.com/harthur/color" target="_blank">harthur/color.js</a>, <a href="https://github.com/sole/tween.js/" target="_blank">sole/tween.js</a>, <a href="https://code.google.com/p/hyphenator/" target="_blank">Hyphenator.js</a>.</p>
+                </div>
+            </div>
+            <h2>Contacto<span lang="en">Contact</span></h2>
+            <p class="econmail"></p>
+            <br/>
+            <div class="fecha"></div>
+        </div>
+
+
+    </div>
+
+    <script src="js/utils/ga.js"></script>
+    <script src="riveted.min.js"></script>
+    <script>riveted.init();</script>
+    <script src="js/libs/has/has.js"></script>
+    <script src="js/libs/has/detect/graphics.js"></script>
+    <script src="js/libs/has/detect/array.js"></script>
+    <script src="js/libs/jquery-2.0.3.min.js"></script>
+    <script src="js/libs/hyphenate.js"></script>
+    <script src="js/libs/jquery.autocomplete.min.js"></script>
+    <script src="js/libs/jquery.nanoscroller.min.js"></script>
+    <script src="js/libs/color/color.min.js"></script>
+    <script src="js/libs/tween/tween.min.js"></script>
+    <script src="js/libs/sketch/js/sketch_ss.js"></script>
+    <script src="js/libs/coffee-physics/deploy/physics.js"></script>
+    <script src="js/worms/public.js"></script>
+    <script src="js/worms/classes/company.js"></script>
+    <script src="js/worms/classes/worm.js"></script>
+    <script src="js/worms/demo.js"></script>
+    <script src="js/worms/run.js"></script>
+    <script src="js/worms/setup.js"></script>
+
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v2.4&appId=553365664757177";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<script>$("#partilha").hide();</script>
+   
+    <script type="text/javascript">var addthis_config = {"ui_language": "pt"};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52abcda12ed5416a"></script>
+</body>
+</html>
