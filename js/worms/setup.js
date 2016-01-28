@@ -200,26 +200,4 @@ function setupEnglishLanguage() {
     });
 }
 
-var nhom = new function() {
-    var arr = [];
-    this.make = function(e) {
-        arr.push(String.fromCharCode(e.keyCode));
-        if (arr.length > 5)
-            arr.shift();
-        if (arr.join("") == "LICIA") {
-            anim();
-        }
-    };
 
-    function anim() {
-        $("html").addClass("nhomBody");
-        var el = $("<div></div>")
-                .addClass("nhom")
-                .append("<p>nhom</p>")
-                .append("<p>nhom</p>")
-                .append("<p>nhom</p>");
-        el.hide();
-        $("#container2").append(el);
-        el.fadeIn(3000);
-    }
-}();

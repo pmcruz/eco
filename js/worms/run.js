@@ -749,7 +749,5 @@ function run() {
         clicker.addClick();
     };
 
-    sk.keyup = function(key) {
-        nhom.make(key);
-    };
+   
 }

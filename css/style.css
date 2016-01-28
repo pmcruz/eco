@@ -800,34 +800,6 @@ a{
     background-color: #BBB;
 }*/
 
-.nhom{
-    position: absolute;
-    width: 300px;
-    font-family: "Playfair Display", sans-serif;
-    font-size: 36px;
-    font-style: italic;
-    line-height: 0;
-    color: #ff0066;
-
-    z-index: 99;
-    top: 270px;
-    /* margin-right: auto; */
-    /* margin-left: auto; */
-    /* left: 100px; */
-    /* right: auto; */
-    /* margin:  auto; */
-    text-align: center;
-    left: 356px;
-}
-
-.nhomBody{
-    background: url('../img/paris.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 #containerright .nano { 
     width: 256px; 
     height: 300px; 
