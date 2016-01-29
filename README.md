@@ -42,7 +42,7 @@ in Portugal, it is indeed highly illustrative of the subject.
 **The data is available in the JSON format in js/worms/data/worms\_12jan.json.
 Companies are created through this file by using their name as the identifier.
 An additional data file js/worms/data/grouping.json enables to attribute
-long/additional names to the companies and to group several countries into one
+long/additional names to the companies and to group several companies into one
 by using the “related” attribute. Grouping can be used to merge several
 companies into big corporate groups.**
 
